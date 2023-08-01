@@ -10,7 +10,11 @@ const connectDB = require("./db")
 connectDB()
 //middleware
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+    {
+        origin:["https://chategtp-clone.onrender.com"]
+    }
+))
 
 //register page routes
 app.use("/api/auth", require("./routes/userRouter"));
