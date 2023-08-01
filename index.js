@@ -17,10 +17,10 @@ app.use("/api/auth", require("./routes/userRouter"));
 app.use("/api/openai", require("./routes/openaiRouter"));
 
 //read static file
-app.use(express.static(path.join(__dirname,"./client/build")));
+app.use(express.static(path.join(__dirname,"./build")));
 
 app.get("*",function(_,res){
-res.sendFile(path.join(__dirname,"./client/build"),function(err){
+res.sendFile(path.join(__dirname,"./build"),function(err){
     res.status(500).send(err);
 })
 })
